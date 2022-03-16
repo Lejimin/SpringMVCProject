@@ -16,6 +16,10 @@ public class ShopController {
 	@Autowired
 	ShopService shopService;
 	
+	@RequestMapping(value="/create", method=RequestMethod.GET)
+	public ModelAndView create() { //create의 이름은 아무거나 가능 해당 이름으로 url에 적어서 들어가면 이름이 달라도 /create가 실행
+		return new ModelAndView("shop/create");
+	}
 
 	@RequestMapping(value="/create", method=RequestMethod.POST)
 	public ModelAndView createPost(@RequestParam Map<String,Object> map) {
